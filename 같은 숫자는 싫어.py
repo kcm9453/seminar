@@ -1,11 +1,12 @@
-def solution(array):
+import sys
+n = int(sys.stdin.readline())
 
-    answer = [] # 입력한 답을 초기화 해준다.
-    answer.append(array[0]) # 입력 받을 스택구조를 활용하여 0부터 9까지 반환
-    len = array[0]
+answer = []
 
-    for i in array:
-       if i != len:
-           answer.append(i) # 입력 받은 데이터 i를 반환
-           len = i
-    return answer
+for i in range(n):
+    command = sys.stdin.readline().split()
+    if command[0] == 'push':
+       if len(answer) == 0 or answer[-1] != command[1]:
+           answer.append(command[1])
+
+print(answer)
