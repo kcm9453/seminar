@@ -18,3 +18,5 @@ for i in range(10001):
         for j in range(count[i]):
             # for j in range(count[i]):에서는 숫자 i를 count[i] 만큼 출력합니다. 이는 i가 몇 번 등장했느냐에 따라 그만큼 출력됩니다.
             print(i)
+
+            # 계수 정렬 문제 퀵 정렬로 문제를 풀면 n의 범위가 너무 넓어져 런타임 오류가 남
