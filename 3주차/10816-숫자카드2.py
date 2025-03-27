@@ -19,13 +19,13 @@ dic1 = {}
 # 상근이 카드 목록을 하나씩 돌면서 개수 세기
 for x in sangen:
     if x in dic1:
-        dic1[x] += 1  # 이미 딕셔너리에 있으면 개수 증가
+        dic1[x] += 1  # 찾아야 하는 수가 상근이한테 있으면 계속 카운팅 하면서 동작 진행
     else:
-        dic1[x] = 1   # 처음 등장한 숫자면 개수를 1로 초기화
+        dic1[x] = 1   # 카운팅을 하다가 처음 본 숫자가 등장하면 동작 정지
 
 # 찾고자 하는 카드 목록을 하나씩 돌면서 결과 출력
-for ssaannggeenn in cards:
-    if ssaannggeenn in dic1:
-        print(dic1[ssaannggeenn], end='')  # 존재하면 해당 숫자의 개수 출력
+for y in cards:
+    if y in dic1:
+        print(dic1[y],end='')  # 존재하면 해당 숫자의 개수 출력
     else:
-        print(0, end='')              # 존재하지 않으면 0 출력
+        print(0,end='')        # 존재하지 않으면 0 출력
