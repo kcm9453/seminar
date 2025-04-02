@@ -33,7 +33,8 @@ def dfs(x, y):
 
         # 지도 범위를 벗어 나지 않고, 집이 있으며, 방문 하지 않았다면 재귀적으로 DFS 호출
         if 0 <= nx < n and 0 <= ny < n: # 이 조건문은 2차원 배열(지도,행,열)의 범위를 벗어 나지 않도록 안전하게 탐색 하기 위해서 사용한 조건문
-            if graph[nx][ny] == 1 and not visited[nx][ny]:
+            if graph[nx][ny] == 1 and not visited[nx][ny]: # graph[nx][ny] == 1 이동한 위치에 집이 있는가? not visited[nx][ny] 그 집을 이미 탐색을 했는가?
+                                                           # → 이미 탐색 된 집이면 다른 DFS 탐색 과정에서 단지로 포함되었음 (이 뜻은 중복 탐색을 방지해줌)
                 count += dfs(nx, ny)  # 이어진 집 수를 누적
 
     return count  # 탐색이 끝난 단지 내 전체 집 수를 반환
@@ -47,7 +48,7 @@ for i in range(n):
         # 집이 있으며, 아직 방문 하지 않은 경우 → 새로운 단지 발견
         if graph[i][j] == 1 and not visited[i][j]:
             # graph[i][j] == 1이 이 좌표에 집이 존재 한건가?, not visited[i][j] 이 집을 미니 방문 해서 단지로 분류 했는가?
-                                               # 이 구문은 만약 visited[i][j] == False 일때만, 즉 아직 방문하지 않은 집일 때만 탐색
+                                    # 이 구문은 만약 visited[i][j] == False 일때만, 즉 아직 방문하지 않은 집일 때만 탐색
             result.append(dfs(i, j))  # DFS 탐색 결과를 리스트에 추가
 
 # 각 단지 내 집 수를 오름 차순 정렬
