@@ -47,8 +47,8 @@ for i in range(n):
     for j in range(n):
         # 집이 있으며, 아직 방문 하지 않은 경우 → 새로운 단지 발견
         if graph[i][j] == 1 and not visited[i][j]:
-            # graph[i][j] == 1이 이 좌표에 집이 존재 한건가?, not visited[i][j] 이 집을 미니 방문 해서 단지로 분류 했는가?
-                                    # 이 구문은 만약 visited[i][j] == False 일때만, 즉 아직 방문하지 않은 집일 때만 탐색
+            # graph[i][j] == 1이 이 좌표에 집이 존재 한건가?, not visited[i][j] 이 집을 이미 방문 해서 단지로 분류 했는가?
+                                      # 이 구문은 만약 visited[i][j] == False 일때만, 즉 아직 방문하지 않은 집일 때만 탐색
             result.append(dfs(i, j))  # DFS 탐색 결과를 리스트에 추가
 
 # 각 단지 내 집 수를 오름 차순 정렬
