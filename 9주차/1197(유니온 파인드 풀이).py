@@ -1,5 +1,5 @@
 import sys
-input = sys.stdin.readline
+input = sys.stdin.readline()
 
 # 서로소 집합 (Union-Find)을 위한 함수 정의
 
